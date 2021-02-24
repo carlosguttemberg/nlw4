@@ -1,21 +1,20 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
 
-@Entity('users')
-class User {
+@Entity('surveys')
+class Survey {
     @PrimaryGeneratedColumn('uuid')
     readonly id: string;
 
     @Column()
-    name: string;
+    title: string;
 
     @Column()
-    email: string;
-
+    description: string;
+    
     @CreateDateColumn()
     created_at: Date;
 
     @UpdateDateColumn()
     updated_at: Date;
 }
-
-export default User;
+export default Survey;
