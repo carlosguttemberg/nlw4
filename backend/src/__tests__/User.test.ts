@@ -10,6 +10,7 @@ describe("Users",() => {
     
     beforeAll(async () => {
         connection = await createConnection('nlw4-test');
+        await connection.query('DROP TABLE IF EXISTS surveys_users');
         await connection.query('DROP TABLE IF EXISTS surveys');
         await connection.query('DROP TABLE IF EXISTS users');
         await connection.query('DROP TABLE IF EXISTS migrations');
